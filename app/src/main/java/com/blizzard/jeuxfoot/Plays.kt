@@ -21,7 +21,13 @@ object Plays {
     const val ASSET_DIR = "raw"
 
     private val videoByPlayId: Map<String, String> = mapOf(
-        "minnesota" to "minnesota.mp4",
+        "40_hawaii" to "hawaii-anim.mp4",
+        "40_florida" to "florida-anim.mp4",
+        "40_hawaii_university" to "hawaii-university-anim.mp4",
+        "massachusetts" to "massachusetts-anim.mp4",
+        "massachusetts_university" to "massachusetts-university-anim.mp4",
+        "minnesota" to "minnesota-anim.mp4",
+        "timberwolves" to "timberwolves-anim.mp4",
     )
 
     val all: List<Play> = listOf(
