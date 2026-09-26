@@ -1,0 +1,46 @@
+package com.blizzard.jeuxfoot
+
+/**
+ * Un jeu de l'équipe. [assetFileName] est le MP4 dans `assets/raw/`,
+ * ou null tant que l'animation n'est pas prête.
+ */
+data class Play(
+    val id: String,
+    val title: String,
+    val assetFileName: String?,
+)
+
+/**
+ * Catalogue des jeux, et table playId → fichier vidéo.
+ *
+ * Pour ajouter une animation :
+ * 1. déposer le MP4 dans `app/src/main/assets/raw/`
+ * 2. ajouter une ligne dans [videoByPlayId]
+ */
+object Plays {
+    const val ASSET_DIR = "raw"
+
+    private val videoByPlayId: Map<String, String> = mapOf(
+        "minnesota" to "minnesota.mp4",
+    )
+
+    val all: List<Play> = listOf(
+        play("40_hawaii", "40 Hawaii"),
+        play("40_florida", "40 Florida"),
+        play("40_hawaii_university", "40 Hawaii University"),
+        play("massachusetts", "Massachusetts"),
+        play("massachusetts_university", "Massachusetts University"),
+        play("minnesota", "Minnesota"),
+        play("timberwolves", "Timberwolves"),
+    )
+
+    fun byId(id: String): Play? = all.find { it.id == id }
+
+    fun assetUri(fileName: String): String = "asset:///$ASSET_DIR/$fileName"
+
+    private fun play(id: String, title: String) = Play(
+        id = id,
+        title = title,
+        assetFileName = videoByPlayId[id],
+    )
+}

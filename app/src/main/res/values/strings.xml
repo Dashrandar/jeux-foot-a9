@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jeux Foot</string>
+    <string name="picker_title">JEUX</string>
+    <string name="picker_badge">FOOT À 9</string>
+    <string name="picker_hint">Touche un jeu pour lancer l\'animation</string>
+    <string name="coming_soon">Animation bientôt</string>
+    <string name="has_video">vidéo</string>
+    <string name="back">Retour</string>
+    <string name="play_content_description">Lancer %1$s</string>
+</resources>
