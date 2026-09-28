@@ -7,11 +7,13 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -52,26 +54,22 @@ fun PlayPickerScreen(onPlaySelected: (Play) -> Unit) {
         ) {
             PickerHeader()
             Spacer(Modifier.height(12.dp))
-            Plays.all.chunked(COLUMNS).forEachIndexed { index, row ->
-                if (index > 0) Spacer(Modifier.height(12.dp))
-                Row(
-                    modifier = Modifier
-                        .weight(1f)
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp),
-                ) {
-                    row.forEach { play ->
-                        PlayCard(
-                            play = play,
-                            onClick = { onPlaySelected(play) },
-                            modifier = Modifier
-                                .weight(1f)
-                                .fillMaxHeight(),
-                        )
-                    }
-                    repeat(COLUMNS - row.size) {
-                        Spacer(Modifier.weight(1f))
-                    }
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(COLUMNS),
+                modifier = Modifier
+                    .weight(1f)
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                items(Plays.all, key = { it.id }) { play ->
+                    PlayCard(
+                        play = play,
+                        onClick = { onPlaySelected(play) },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(108.dp),
+                    )
                 }
             }
         }

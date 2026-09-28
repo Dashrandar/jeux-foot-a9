@@ -1,6 +1,6 @@
 # Jeux Foot à 9
 
-Application Android, en paysage, pour lancer les animations des jeux de l'équipe. Les sept jeux sont listés. Chacun lit sa vidéo en boucle, avec le son.
+Application Android, en paysage, pour lancer les animations des jeux de l'équipe. Quatorze jeux sont listés. Chacun lit sa vidéo en boucle, avec le son.
 
 L'application fonctionne hors ligne. Elle ne demande pas Internet.
 
@@ -59,3 +59,10 @@ Les titres utilisent la police [Patrick Hand](https://fonts.google.com/specimen/
 | Massachusetts University | `massachusetts_university` | `assets/raw/massachusetts-university-anim.mp4` |
 | Minnesota | `minnesota` | `assets/raw/minnesota-anim.mp4` |
 | Timberwolves | `timberwolves` | `assets/raw/timberwolves-anim.mp4` |
+| Protection 40/41 | `protection_40_41` | `assets/raw/protection-40-41-anim.mp4` |
+| Protection 42/43 | `protection_42_43` | `assets/raw/protection-42-43-anim.mp4` |
+| Denver | `denver` | `assets/raw/denver-anim.mp4` |
+| Sacramento | `sacramento` | `assets/raw/sacramento-anim.mp4` |
+| Jet Denver | `jet_denver` | `assets/raw/jet-denver-anim.mp4` |
+| Denver Hollywood | `denver_hollywood` | `assets/raw/denver-hollywood-anim.mp4` |
+| Denver Hollywood Jet | `denver_hollywood_jet` | `assets/raw/denver-hollywood-jet-anim.mp4` |
